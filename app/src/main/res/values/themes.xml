@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.IFTM" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
+        <item name="colorPrimary">@color/Victoria</item>
+        <item name="colorPrimaryVariant">@color/Victoria</item>
+        <item name="colorOnPrimary">@color/Victoria</item>
+        <item name="android:statusBarColor">@color/Victoria</item>
+
+    </style>
+
+    <style name="Theme.IFTM" parent="Base.Theme.IFTM" />
+<!--
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/iftm</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.IFTM</item>
+
+    </style>-->
+</resources>

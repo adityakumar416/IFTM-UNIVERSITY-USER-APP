@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nev"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.iftm.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+
+    <fragment
+        android:id="@+id/coursesFragment"
+        android:name="com.example.iftm.fragments.CoursesFragment"
+        android:label="fragment_courses"
+        tools:layout="@layout/fragment_courses" >
+        <action
+            android:id="@+id/action_coursesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.iftm.fragments.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_basicComputerQuizFragment"
+            app:destination="@id/basicComputerQuizFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_androidQuizFragment"
+            app:destination="@id/androidQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basicComputerQuizFragment"
+        android:name="com.example.iftm.quiz.BasicComputerQuizFragment"
+        android:label="fragment_basic_computer_quiz"
+        tools:layout="@layout/fragment_basic_computer_quiz" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.iftm.fragments.WebViewFragment"
+        android:label="WebViewFragment"
+        tools:layout="@layout/fragment_web_view"/>
+    <fragment
+        android:id="@+id/androidQuizFragment"
+        android:name="com.example.iftm.quiz.androidQuiz.AndroidQuizFragment"
+        android:label="AndroidQuizFragment"
+        tools:layout="@layout/fragment_android_quiz"/>
+    <fragment
+        android:id="@+id/knowMoreWebViewFragment"
+        android:name="com.example.iftm.fragments.KnowMoreWebViewFragment"
+        android:label="fragment_know_more_web_view"
+        tools:layout="@layout/fragment_know_more_web_view" />
+    <fragment
+        android:id="@+id/reportComplaintFragment"
+        android:name="com.example.iftm.fragments.ReportComplaintFragment"
+        android:label="fragment_report_complaint"
+        tools:layout="@layout/fragment_report_complaint" />
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.example.iftm.fragments.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" />
+
+
+</navigation>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">IFTM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="reportComplaint">Report a complaint</string>
+
+    <string name="courses">Courses</string>
+    <string name="quiz">Quiz</string>
+    <string name="top_companies_trust_us">Top companies trust us</string>
+    <string name="popular_streams">Popular Streams</string>
+    <string name="let_s_help_you_land_your_dream_career">Let\'s help you land your dream career</string>
+
+
+</resources>

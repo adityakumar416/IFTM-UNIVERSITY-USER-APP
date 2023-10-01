@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="EXPLORE">
+        <menu>
+
+        <item
+            android:id="@+id/nav_courses"
+            android:icon="@drawable/course_icon"
+            android:title="Courses"/>
+        <item
+            android:id="@+id/nav_quiz"
+            android:icon="@drawable/ic_message"
+            android:title="Quiz"/>
+            <item
+                android:id="@+id/result"
+                android:icon="@drawable/result_icon"
+                android:title="Result"/>
+
+        </menu>
+    </item>
+
+
+    <item android:title="ACCOUNT SETTINGS">
+        <menu>
+
+            <item
+                android:id="@+id/nav_change_password"
+                android:icon="@drawable/ic_pencil"
+                android:title="Update Password"/>
+            <item
+                android:id="@+id/nav_report_complaint"
+                android:icon="@drawable/baseline_feedback_24"
+                android:title="Report a Complaint"/>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_exit"
+                android:title="Logout"/>
+        </menu>
+    </item>
+</menu>
