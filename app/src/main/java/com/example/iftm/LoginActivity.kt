@@ -44,7 +44,10 @@ class LoginActivity : AppCompatActivity() {
 
         val firebaseDatabase = FirebaseDatabase.getInstance().getReference("user")
 
-
+        binding.forgotPassword.setOnClickListener {
+            val intent = Intent(this,ResetPasswordActivity::class.java)
+            startActivity(intent)
+        }
 
         // customizeGooglePlusButton(googleSignInButton)
 
