@@ -12,6 +12,11 @@
             android:icon="@drawable/course_icon"
             android:title="Courses" />
 
+        <item
+            android:id="@+id/newsFragment"
+            android:icon="@drawable/explore"
+            android:title="News" />
+
         <item android:id="@+id/quizFragment"
             android:icon="@drawable/person_icon"
             android:title="Quiz" />

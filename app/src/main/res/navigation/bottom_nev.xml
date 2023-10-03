@@ -63,6 +63,11 @@
         android:name="com.example.iftm.fragments.ResetPasswordFragment"
         android:label="fragment_reset_password"
         tools:layout="@layout/fragment_reset_password" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.iftm.news.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
 
 
 </navigation>

@@ -20,6 +20,12 @@
         android:theme="@style/Theme.IFTM"
         tools:targetApi="tiramisu">
         <activity
+            android:name=".news.NewsWebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".news.NewsDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResetPasswordActivity"
             android:exported="false" />
         <activity
