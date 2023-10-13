@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "824256831838",
+    "firebase_url": "https://iftm-university-default-rtdb.firebaseio.com",
     "project_id": "iftm-university",
     "storage_bucket": "iftm-university.appspot.com"
   },
@@ -14,15 +15,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "824256831838-84pa3c62tldokhkeef2689dfl7a4p978.apps.googleusercontent.com",
+          "client_id": "824256831838-h1mrtll8lefsa25j228gol6kiuk21avn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.iftm",
-            "certificate_hash": "21f4498d5268eea1c4a83a8cadd6e5ee60a087da"
+            "certificate_hash": "13c97b419263432c4b37075c5f19de28ff87a6a7"
           }
         },
         {
-          "client_id": "824256831838-pq4iss3mbvbfu2hkarluq5lgrcvjaemi.apps.googleusercontent.com",
+          "client_id": "824256831838-gb7inb44hp0girg2pnrpgot5pmarpei5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -35,7 +36,44 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "824256831838-pq4iss3mbvbfu2hkarluq5lgrcvjaemi.apps.googleusercontent.com",
+              "client_id": "824256831838-gb7inb44hp0girg2pnrpgot5pmarpei5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824256831838:android:a2c447a4a78aa817262fcf",
+        "android_client_info": {
+          "package_name": "com.example.iftmadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824256831838-0882rrimpf45ijaoqrp14u0mt6ns2t8j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.iftmadmin",
+            "certificate_hash": "21f4498d5268eea1c4a83a8cadd6e5ee60a087da"
+          }
+        },
+        {
+          "client_id": "824256831838-gb7inb44hp0girg2pnrpgot5pmarpei5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm3Pid1SUAy2iwSp4zZBgjmcNg5TJjTT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824256831838-gb7inb44hp0girg2pnrpgot5pmarpei5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

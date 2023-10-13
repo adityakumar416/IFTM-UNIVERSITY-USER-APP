@@ -45,16 +45,16 @@ android {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.22")
-    implementation("androidx.core:core-ktx:1.10.1")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
+    implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
     implementation("com.google.firebase:firebase-database-ktx:20.2.2")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
-    implementation("com.google.firebase:firebase-auth-ktx:22.1.1")
+    implementation("com.google.firebase:firebase-auth-ktx:22.1.2")
     implementation("com.google.firebase:firebase-inappmessaging-display-ktx:20.3.5")
     implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
     implementation("androidx.test:core-ktx:1.5.0")
@@ -71,13 +71,14 @@ dependencies {
     implementation("com.rubensousa:decorator:2.1.0")
 
 
-    implementation("com.google.firebase:firebase-bom:32.1.0")
+    //noinspection BomWithoutPlatform
+    implementation("com.google.firebase:firebase-bom:32.3.1")
 
     // Also add the dependency for the Google Play services library and specify its version
-    implementation("com.google.android.gms:play-services-auth:20.6.0")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 
     implementation ("com.facebook.shimmer:shimmer:0.1.0@aar")
-    implementation("com.github.bumptech.glide:glide:4.11.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
     androidTestImplementation ("com.android.support.test.espresso:espresso-core:3.0.2")
 
    // implementation("com.github.Drjacky:ImagePicker:1.8.4")

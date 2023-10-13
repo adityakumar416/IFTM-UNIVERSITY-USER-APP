@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 Firebase.auth.signOut()
                 val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestIdToken("824256831838-ksi98eeunueqquvq7fct14o3nmeh0auf.apps.googleusercontent.com")
+                    .requestIdToken("824256831838-gb7inb44hp0girg2pnrpgot5pmarpei5.apps.googleusercontent.com")
                     .requestEmail()
                     .build()
 
