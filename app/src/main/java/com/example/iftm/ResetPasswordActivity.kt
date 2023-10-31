@@ -45,14 +45,9 @@ class ResetPasswordActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Toast.makeText(this, "We have sent you a Email.", Toast.LENGTH_SHORT).show()
 
-                    // Password reset email sent successfully
-                    // You can show a success message to the user or navigate to another screen
                 } else {
                     Toast.makeText(this, "Something went wrong !", Toast.LENGTH_SHORT).show()
 
-                    // Password reset failed
-                    // You can show an error message to the user
-                    // showErrorDialog("Password Reset Failed", task.exception?.message ?: "Unknown error occurred")
                 }
             }
     }

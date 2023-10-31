@@ -37,11 +37,6 @@ class ShowHomeHorizontalCoursesAdapter(
         val courseName : TextView = view.findViewById(R.id.course_name)
         val knowMore : TextView = view.findViewById(R.id.know_more)
 
-        /* val courseDuration :TextView = view.findViewById(R.id.course_duration)
-         val courseFees : TextView = view.findViewById(R.id.course_fees)
-         val knowMore : TextView = view.findViewById(R.id.know_more)
-         val card : MaterialCardView = view.findViewById(R.id.materialCardView)*/
-
 
     }
 
@@ -56,8 +51,6 @@ class ShowHomeHorizontalCoursesAdapter(
             val popularStreamsCourseModel:PopularStreamsCourseModel = streamsCourseList[position]
 
             holder.courseName.setText("  "+popularStreamsCourseModel.courseName)
-        /*holder.courseDuration.setText("  "+courseModel.courseDuration)
-        holder.courseFees.setText("  "+courseModel.courseFees)*/
 
 
 

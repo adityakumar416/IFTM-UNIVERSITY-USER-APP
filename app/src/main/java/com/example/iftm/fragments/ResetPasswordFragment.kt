@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.iftm.MainActivity
 import com.example.iftm.databinding.FragmentResetPasswordBinding
@@ -57,13 +58,13 @@ class ResetPasswordFragment : Fragment() {
         auth.sendPasswordResetEmail(email)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // Password reset email sent successfully
-                    // You can show a success message to the user or navigate to another screen
+                    Toast.makeText(context, "We have sent you a Email.", Toast.LENGTH_SHORT).show()
+
+
                 } else {
-                    // Password reset failed
-                    // You can show an error message to the user
-                   // showErrorDialog("Password Reset Failed", task.exception?.message ?: "Unknown error occurred")
-                }
+                    Toast.makeText(context, "Something went wrong !", Toast.LENGTH_SHORT).show()
+
+                         }
             }
     }
 

@@ -60,10 +60,7 @@ class LoginActivity : AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-        // [END config_signin]
 
-        // [START initialize_auth]
-        // Initialize Firebase Auth
         auth = Firebase.auth
         // [END initialize_auth]
 
@@ -131,7 +128,6 @@ class LoginActivity : AppCompatActivity() {
                     .addOnCompleteListener {
                         if (!it.isSuccessful) return@addOnCompleteListener
 
-                      //  prefManager.checkLogin(Constant.PREF_IS_LOGIN, true)
                         Log.d(TAG, "Successfully logged in: ${it.result!!.user?.uid}")
                         Toast.makeText(this, "${it.result}", Toast.LENGTH_SHORT).show()
 

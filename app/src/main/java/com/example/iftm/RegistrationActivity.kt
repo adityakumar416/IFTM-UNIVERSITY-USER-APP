@@ -110,11 +110,6 @@ class RegistrationActivity : AppCompatActivity() {
 
                             userModal = postSnapshot.getValue(UserModal::class.java)
                             Log.i("homeUserData", "onCreateView: UserData > " + postSnapshot.value)
-/*
-                            prefManager.name(Constant.PREF_IS_NAME, userModal?.name.toString())
-                            prefManager.number(Constant.PREF_IS_NUMBER,userModal?.number.toString())
-                            prefManager.email(Constant.PREF_IS_EMAIL,userModal?.email.toString())
-                            prefManager.password(Constant.PREF_IS_PASSWORD,userModal?.password.toString())*/
 
 
                         }
@@ -125,11 +120,7 @@ class RegistrationActivity : AppCompatActivity() {
                     }
                 })
 
-             /*   prefManager.name(Constant.PREF_IS_NAME,binding.nameEditText.text.toString())
-                prefManager.number(Constant.PREF_IS_NUMBER,binding.numberEditText.text.toString())
-                prefManager.email(Constant.PREF_IS_EMAIL,binding.emailEditText.text.toString())
-                prefManager.password(Constant.PREF_IS_PASSWORD,binding.passwordEditText.text.toString())
-*/
+
 
 
             }
@@ -169,11 +160,6 @@ class RegistrationActivity : AppCompatActivity() {
                 } else {
                     Snackbar.make(binding.signUpBtn, "Something went Wrong", Snackbar.LENGTH_SHORT).show()
                 }
-
-                /* binding.nameEditText.text = null
-                 binding.numberEditText.text= null
-                 binding.emailEditText.text= null
-                 binding.passwordEditText.text= null*/
 
             }
 

@@ -174,15 +174,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         transaction.replace(R.id.fragmentContainerView, fragment)
             .commit()
     }
-   /* override fun onBackPressed() {
-        if (backPressedTime + 3000 > System.currentTimeMillis()) {
-            super.onBackPressed()
-            finish()
-        } else {
-            Toast.makeText(this, "Press back again to leave the app.", Toast.LENGTH_LONG).show()
-        }
-        backPressedTime = System.currentTimeMillis()
-    }
-*/
+
 
 }
