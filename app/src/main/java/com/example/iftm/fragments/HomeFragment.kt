@@ -111,7 +111,7 @@ class HomeFragment : Fragment() {
         //  {it.providerId == "google.com"}
 
         if(currentUser != null && currentUser.providerData.any { it.providerId == GoogleAuthProvider.PROVIDER_ID }){
-            binding.title.text = "Hi, "+Firebase.auth.currentUser?.displayName.toString()+"!."
+            binding.title.text = "Hi, "+Firebase.auth.currentUser?.displayName.toString().split("\\s".toRegex())[0]+" !"
             Log.i("googleAuthFirebaseName","Hi, "+Firebase.auth.currentUser?.displayName.toString()+"!" )
         }else {
             val userName = prefManager.getValue(Constant.PREF_IS_NAME)
