@@ -53,4 +53,128 @@ class ReportComplaintFragment : Fragment() {
         val user: FirebaseUser? = FirebaseAuth.getInstance().currentUser
 
 
+        if(user != null && user.providerData.any()){
+            binding.userName.text = "Hi, "+Firebase.auth.currentUser?.displayName.toString()
+        }else{
+            val userName = prefManager.getValue(Constant.PREF_IS_NAME)
+            binding.userName.text = "Hi, "+userName.toString()
+        }
+
+
+        binding.attachFile.setOnClickListener {
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent, 71)
+        }
+
+
+        binding.sendComplaint.setOnClickListener {
+
+            val courseName =binding.complaintBox.text.toString()
+            val attachFile =binding.attachFile.text.toString()
+          //   val courseFees =binding.courseFees.text.toString()*/
+
+            if(courseName.isEmpty()){
+                Toast.makeText(
+                    context,
+                    "Please enter Something in the Complaint Box.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            else if(attachFile.isEmpty()){
+                Toast.makeText(
+                    context,
+                    "Please Attach the Screenshot.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            else {
+                addDataToFirebase(courseName)
+            }
+
+        }
+
+
+        return binding.root
+    }
+
+    private fun addDataToFirebase(courseName: String) {
+        val processDialog = ProgressDialog(context)
+        processDialog.setMessage("Complaint Sending..")
+        processDialog.setCancelable(false)
+        processDialog.show()
+
+        val firebaseStorage = FirebaseStorage.getInstance().getReference("reportComplaint")
+        val firebaseDatabase = FirebaseDatabase.getInstance().getReference("reportComplaint")
+
+        val storageRef = firebaseStorage.child(System.currentTimeMillis().toString()+"."+ getFileExtension(uri))
+        storageRef.putFile(uri)
+            .addOnSuccessListener { takeSnapshot ->
+                Log.i(ContentValues.TAG, "onSuccess Main: $takeSnapshot")
+
+                Toast.makeText(context, "Complaint was successfully send.", Toast.LENGTH_SHORT).show()
+                processDialog.dismiss()
+
+                val urlTask: Task<Uri> = takeSnapshot!!.storage.downloadUrl
+                while (!urlTask.isSuccessful);
+                val downloadUrl: Uri = urlTask.result
+                Log.i(ContentValues.TAG, "onSuccess: $downloadUrl")
+
+                val reportComplaintModel = ReportComplaintModel(
+                    firebaseDatabase!!.push().key,
+                    downloadUrl.toString(),
+                    courseName
+                    /*courseDuration,
+                    courseFees*/
+                )
+                val uploadId = reportComplaintModel.complaintId
+
+                firebaseDatabase!!.child(uploadId.toString()).setValue(reportComplaintModel)
+
+                binding.complaintBox.text = null
+                /* binding.courseDuration.text = null
+                 binding.courseFees.text = null*/
+                binding.attachFile.text= null
+                refreshCurrentFragment()
+            }
+
+            .addOnFailureListener {
+                Toast.makeText(context, "Failed to send Complaint.", Toast.LENGTH_SHORT).show()
+              //  Toast.makeText(context, "Please Attach the Screenshot.", Toast.LENGTH_SHORT).show()
+                processDialog.dismiss()
+
+            }
+            .addOnProgressListener { taskSnapshot -> //displaying the upload progress
+                val progress =
+                    100.0 * taskSnapshot.bytesTransferred / taskSnapshot.totalByteCount
+                processDialog.setMessage("Sending " + progress.toInt() + "%...")
+            }
+    }
+
+    private fun getFileExtension(uri: Uri): String? {
+        val cR: ContentResolver = requireContext().contentResolver
+        val mime = MimeTypeMap.getSingleton()
+        return mime.getExtensionFromMimeType(cR.getType(uri))
+    }
+
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 71 && resultCode == Activity.RESULT_OK) {
+            if(data == null || data.data == null){
+                return
+            }
+
+            uri = data.data!!
+
+        }
+    }
+
+
+    private fun refreshCurrentFragment(){
+        val id = findNavController().currentDestination?.id
+        findNavController().popBackStack(id!!,true)
+        findNavController().navigate(id)
+    }
 }
