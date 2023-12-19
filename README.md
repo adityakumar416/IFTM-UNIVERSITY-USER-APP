@@ -1,1 +1,1 @@
-Compleate 
+News Fuctionality done
